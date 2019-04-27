@@ -9,7 +9,12 @@
     <p id="sobrenome"></p>
     <h1 id="nomecompleto"></h1>
     <script>
-        
+        var nome = document.getElementById("nome");
+        nome.textContent = "Bruno";
+        var sobrenome = document.getElementById("sobrenome");
+        sobrenome.textContent = "Guedes"
+        var nomeCompleto = document.getElementById("nomecompleto");
+        nomeCompleto.textContent = "Bem vindo " + nome.textContent + " " + sobrenome.textContent;
     </script>
 </body>
 </html>
