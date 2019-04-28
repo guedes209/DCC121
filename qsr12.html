@@ -7,7 +7,10 @@
 <body>
     <div id="iterativo">Clique-me</div>
     <script>
-        
+        var iterativo = document.getElementById("iterativo");
+        iterativo.addEventListener("click",function(){
+            iterativo.textContent = "funcionou";
+        })
     </script>
 </body>
 </html>
