@@ -18,6 +18,10 @@
         var button = document.getElementById("calcular");
         x.contentEditable = true;
         y.contentEditable = true;
+        button.addEventListener("click",function(){
+            soma.textContent = "A soma de " + x.textContent + " e " + y.textContent + " é " + (parseInt(x.textContent) + parseInt(y.textContent));
+            produto.textContent = "O produto de " + x.textContent + " e " + y.textContent + " é " + (parseInt(x.textContent) * parseInt(y.textContent));
+        })
     </script>
 </body>
 </html>
