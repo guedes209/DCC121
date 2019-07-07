@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lista 1.2</title>
+    </head>
+    <body>
+        <main>
+            <h1>Resultado da Avaliação</h1>
+            <p>
+                Olá <span id="nome">Fulano</span>, você está matriculado há <span id="tempo">2</span> anos no curso de 
+                Confeitaria e as notas das suas disciplinas são:
+                <span id="confeitaria">70</span> em Confeitaria Básica; 
+                <span id="coberturas">80</span> em Coberturas e <span id="broas">60</span> em Broas e Bolos
+            </p>
+            <p id="resultado">
+
+            </p>
+            <button id="avaliar">Avaliar</button>
+            <button id="limpar">Limpar</button>
+            <p id="melhorias">
+
+            </p>
+        </main>
+        <script>
+            var nome = document.getElementById("nome");
+            var anos = document.getElementById("tempo");
+            var confeitaria = document.getElementById("confeitaria");
+            var cobertura = document.getElementById("coberturas");
+            var bolos = document.getElementById("broas");
+            var botaoAvaliar = document.getElementById("avaliar");
+            var botaoLimpar = document.getElementById("limpar");
+            var resultado = document.getElementById("resultado");
+            var melhorias = document.getElementById("melhorias");
+            var media;
+            nome.contentEditable = true;
+            anos.contentEditable = true;
+            confeitaria.contentEditable = true;
+            cobertura.contentEditable = true;
+            bolos.contentEditable = true;
+            botaoLimpar.addEventListener("click",function(){
+                resultado.textContent = "";
+                media.textContent = "";
+            });
+            botaoAvaliar.addEventListener("click",function(){
+                media = (parseFloat(confeitaria.textContent) + parseFloat(cobertura.textContent) + parseFloat(bolos.textContent))/3;
+                if(media >= 60){
+                    resultado.textContent = "Parabens " + nome.textContent + "! Você está aprovado com média de " + media + "!";
+                }
+                else{
+                    resultado.textContent = "Você está reprovado com média " + media + "!";
+                }
+                if(parseFloat(confeitaria.textContent) < 60)
+                    resultado.textContent = resultado.textContent + '\n' +nome.textContent + ", considere estudar mais confeitaria";
+                if(parseFloat(cobertura.textContent) < 60)
+                    resultado.textContent = resultado.textContent + nome.textContent + ", considere estudar mais cobertura";
+                if(parseFloat(bolos.textContent) < 60)
+                    resultado.textContent = resultado.textContent + nome.textContent + ", considere estudar mais bolos";
+            });
+        </script>
+    </body>
+</html>
